@@ -1,8 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
+import Navbar from './components/Navbar'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import SuperheroesList from './pages/SuperheroesList'
+import CreatorsList from './pages/CreatorsList'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -27,9 +30,30 @@ function App() {
             <Route path="/" element={
               <ProtectedRoute>
                 <div className="h-screen w-screen flex flex-col">
+                  <Navbar />
 
-                  <h1>Hola Mundo</h1>
+                </div>
+              </ProtectedRoute>
+            } />
 
+            <Route path="/superheroes" element={
+              <ProtectedRoute>
+                <div className="h-screen w-screen flex flex-col">
+                  <Navbar />
+                  <main className="flex-1 w-full flex items-center justify-center">
+                    <SuperheroesList />
+                  </main>
+                </div>
+              </ProtectedRoute>
+            } />
+
+            <Route path="/creators" element={
+              <ProtectedRoute>
+                <div className="h-screen w-screen flex flex-col">
+                  <Navbar />
+                  <main className="flex-1 w-full flex items-center justify-center">
+                    <CreatorsList />
+                  </main>
                 </div>
               </ProtectedRoute>
             } />
