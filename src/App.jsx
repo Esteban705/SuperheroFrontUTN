@@ -11,7 +11,7 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/">
         <div className="min-h-screen min-w-full bg-gray-100">
           <Routes>
             {/* Rutas públicas */}
