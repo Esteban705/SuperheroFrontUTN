@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = process.env.API_URL
+const API_URL = import.meta.env.VITE_API_URL
 
 // Configurar el interceptor para incluir el token
 axios.interceptors.request.use((config) => {
