@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3001/api'
+const API_URL = process.env.API_URL
 
 // Configurar el interceptor para incluir el token
 axios.interceptors.request.use((config) => {
