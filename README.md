@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Superhéroes App - Aplicación SPA con React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
+Esta aplicación web es un sistema de gestión de superhéroes y sus creadores, desarrollada como una SPA (Single Page Application) utilizando React. Permite realizar operaciones CRUD completas sobre superhéroes y sus creadores, con un sistema de autenticación robusto.
 
-## Available Scripts
+## Funcionalidades Principales
 
-In the project directory, you can run:
+### 1. Autenticación
+- Sistema de login y registro de usuarios
+- Protección de rutas privadas mediante tokens JWT
+- Gestión de sesiones segura
+- Redirección automática a login para rutas protegidas
 
-### `npm start`
+### 2. Gestión de Superhéroes
+- Crear, ver, editar y eliminar superhéroes
+- Asignación de poderes múltiples
+- Vinculación con creadores
+- Descripción detallada de cada superhéroe
+- Paginación de resultados
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. Gestión de Creadores
+- CRUD completo de creadores
+- Registro de compañía y años de experiencia
+- Visualización en formato de cards
+- Sistema de paginación integrado
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 4. Características Técnicas
+- Navegación SPA con React Router
+- Gestión de estado con Context API
+- Diseño responsive con Tailwind CSS
+- Integración con API REST
+- Modales para formularios de edición
 
-### `npm test`
+## Tecnologías Utilizadas
+- React 18
+- React Router v6
+- Axios para peticiones HTTP
+- Tailwind CSS para estilos
+- Heroicons para iconografía
+- Context API para estado global
+- JWT para autenticación
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estructura del Proyecto
 
-### `npm run build`
+superheros-app/
+├── src/
+│ ├── components/
+│ │ ├── CreatorModal.jsx
+│ │ ├── Navbar.jsx
+│ │ ├── ProtectedRoute.jsx
+│ │ └── SuperheroModal.jsx
+│ ├── pages/
+│ │ ├── Login.jsx
+│ │ ├── Register.jsx
+│ │ ├── SuperheroesList.jsx
+│ │ ├── CreatorsList.jsx
+│ │ └── NotFound.jsx
+│ ├── services/
+│ │ ├── authService.js
+│ │ ├── creatorService.js
+│ │ └── superheroService.js
+│ ├── context/
+│ │ └── AuthContext.jsx
+│ └── App.jsx
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instrucciones de Uso
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clonar el repositorio
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash
+git clone https://github.com/Esteban705/SuperheroFrontUTN.git
+cd superheros-app
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Instalar dependencias
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Configurar variables de entorno
+Crea un archivo `.env` en la raíz del proyecto:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+API_URL=http://localhost:3001/api
 
-## Learn More
+### 4. Iniciar el servidor de desarrollo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+npm run dev
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Características de la Interfaz
+- Diseño moderno y responsive
+- Sistema de cards para visualización de datos
+- Modales interactivos para formularios
+- Navegación intuitiva con barra superior
+- Mensajes de feedback para operaciones CRUD
+- Paginación para grandes conjuntos de datos
 
-### Analyzing the Bundle Size
+## Estado del Proyecto
+🚀 En desarrollo activo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## API Endpoints
+- `/api/auth/login` - Autenticación de usuarios
+- `/api/auth/register` - Registro de usuarios
+- `/api/superheros` - CRUD de superhéroes
+- `/api/creators` - CRUD de creadores
 
-### Making a Progressive Web App
+## Próximas Mejoras
+- [ ] Implementación de búsqueda y filtros
+- [ ] Sistema de roles de usuario
+- [ ] Galería de imágenes para superhéroes
+- [ ] Estadísticas y dashboard
+- [ ] Modo oscuro
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contribuidores
+- Ruben Esteban Rodriguez
